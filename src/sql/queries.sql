@@ -22,31 +22,55 @@ SELECT * FROM observations;
 
 
 -- MISSION 1
--- Your query here;
+-- Your query here;SELECT *
+FROM observations
+LIMIT 10;
 
 -- MISSION 2
--- Your query here;
+-- SELECT DISTINCT region_id
+FROM observations;Your query here;
 
 
 -- MISSION 3
--- Your query here;
+-- SELECT COUNT(DISTINCT species_id) AS especies_distintas
+FROM observations;Your query here;
 
 
 -- MISSION 4
--- Your query here;
+-- SELECT COUNT(*) AS total_observaciones_region_2
+FROM observations
+WHERE region_id = 2;Your query here;
 
 
 -- MISSION 5
--- Your query here;
+-- SELECT COUNT(*) AS observaciones_1998_08_08
+FROM observations
+WHERE observation_date = '1998-08-08';Your query here;
 
 
 -- MISSION 6
--- Your query here;
+-- SELECT region_id, COUNT(*) AS total_observaciones
+FROM observations
+GROUP BY region_id
+ORDER BY total_observaciones DESC
+LIMIT 1;Your query here;
 
 
 -- MISSION 7
--- Your query here;
+-- YSELECT species_id, COUNT(*) AS veces_observada
+FROM observations
+GROUP BY species_id
+ORDER BY veces_observada DESC
+LIMIT 5;our query here;
 
 
 -- MISSION 8
--- Your query here;
+-- SELECT species_id, COUNT(*) AS total_registros
+FROM observations
+GROUP BY species_id
+HAVING COUNT(*) < 5
+ORDER BY total_registros ASC;Your query here;
+SELECT observer, COUNT(*) AS total_observaciones
+FROM observations
+GROUP BY observer
+ORDER BY total_observaciones DESC
